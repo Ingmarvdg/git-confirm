@@ -37,6 +37,19 @@ git commit -m "Testing git confirm"
 Here you're on HTTPS throughout though, and you're not piping directly to execution so you can
 check contents and the hash (against MD5 9ee7ff55f7688f9055a9056bd2617a02 for v0.2.2) before using this, if you like.*
 
+## To use in pre-commit
+
+Add the following in your pre-commit config file. Under args you can select which other keywords must be detected.
+
+```bash
+- repo: https://github.com/ingmarvdg/git-confirm
+  rev: v0.2.2
+  hooks:
+    - id: confirm
+      args: [--add, hook.confirm.match, "TODO"]
+```
+ 
+
 ## To Configure
 
 By default, git-confirm will catch and warn about lines including 'TODO' only.
