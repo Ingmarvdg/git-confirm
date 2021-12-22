@@ -1,0 +1,10 @@
+- id: confirm
+  name: confirm
+  description: "Confirm"
+  entry: precommit_hook.sh
+  language: script
+  minimum_pre_commit_version: 2.9.2
+  require_serial: true
+  types: [file]
+  exclude: .pre-commit-config.yaml
+  verbose: true
